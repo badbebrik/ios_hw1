@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    //MARK: - Work with button behaviour
     @IBAction func button(_ sender: Any) {
         let button = sender as? UIButton
         button?.isEnabled = false
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
             )
         }
         
+        //MARK: Animation
         UIView.animate(withDuration: duration, animations: {
             for view in self.views {
                 view.backgroundColor = set.popFirst()
@@ -40,7 +42,5 @@ class ViewController: UIViewController {
         }) {completion in button?.isEnabled = true}
         
     }
-    
-    
 }
 
